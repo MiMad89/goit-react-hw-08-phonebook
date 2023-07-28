@@ -5,6 +5,10 @@ import { selectError, selectLoading } from 'redux/contacts/selectors';
 import { useSelector } from 'react-redux';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
+const styles = {
+  containerDiv: ['flex', 'justify-center'].join(' '),
+};
+
 const Phonebook = () => {
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
@@ -18,8 +22,10 @@ const Phonebook = () => {
       </HelmetProvider>
 
       <h2>Phonebook</h2>
-      <ContactsForm />
-      <Filter />
+      <div className={styles.containerDiv}>
+        <ContactsForm />
+        <Filter />
+      </div>
       {isLoading ? <p>Loading contacts...</p> : <ContactsList />}
       {isError && <p>Something went wrong. Try again later.</p>}
     </div>

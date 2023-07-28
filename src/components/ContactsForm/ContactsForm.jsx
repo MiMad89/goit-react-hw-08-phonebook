@@ -5,12 +5,12 @@ import { selectContacts } from 'redux/contacts/selectors';
 import { Button, TextField } from '@mui/material';
 
 const styles = {
-  containerDiv: ['flex', 'justify-center', 'mt-28'].join(' '),
+  containerDiv: ['flex', 'justify-center', 'mt-5'].join(' '),
   contactForm: [
     'flex',
     'flex-col',
     'border-2',
-    'p-14',
+    'p-3',
     'rounded-3xl',
     'shadow-lg',
   ].join(' '),
@@ -43,17 +43,18 @@ export const ContactsForm = () => {
   return (
     <div className={styles.containerDiv}>
       <form className={styles.contactForm} onSubmit={handleSubmit}>
-        <label className={styles.label} />
+        <label className={styles.label}>
           <TextField
-          type="text"
-          size="small"
-          name="name"
-          label="Name"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-        />
-        <label className={styles.label} />
-        <TextField
+            type="text"
+            size="small"
+            name="name"
+            label="Name"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+          />
+        </label>
+        <label className={styles.label}>
+          <TextField
             type="tel"
             size="small"
             name="number"
@@ -61,8 +62,9 @@ export const ContactsForm = () => {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
+        </label>
         <Button type="submit" variant="contained">
-        Add contact
+          Add contact
         </Button>
       </form>
     </div>

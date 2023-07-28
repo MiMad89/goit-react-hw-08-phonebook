@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const styles = {
-  containerDiv: ['flex', 'justify-center'].join(' '),
+  containerDiv: ['flex', 'justify-center', 'mb-4', 'gap-4'].join(' '),
 };
 
 const Phonebook = () => {
@@ -21,7 +21,6 @@ const Phonebook = () => {
         </Helmet>
       </HelmetProvider>
 
-      <h2>Phonebook</h2>
       <div className={styles.containerDiv}>
         <ContactsForm />
         <Filter />

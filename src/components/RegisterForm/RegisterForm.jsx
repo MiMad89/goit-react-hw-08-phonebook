@@ -4,6 +4,20 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { register } from 'redux/auth/operations';
 
+const styles = {
+  containerDiv: ['flex', 'justify-center', 'pt-32'].join(' '),
+  registerForm: [
+    'flex',
+    'flex-col',
+    'border-2',
+    'p-14',
+    'rounded-3xl',
+    'shadow-lg',
+  ].join(' '),
+  label: 'mb-5',
+};
+
+
 export const RegisterForm = () => {
   const dispatch = useDispatch();
 
@@ -33,9 +47,9 @@ export const RegisterForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <lable>
+    <div className={styles.containerDiv}>
+      <form onSubmit={handleSubmit} className={styles.registerForm}>
+        <lable className={styles.label}>
           <TextField
             id="register-name-input"
             label="Name"
@@ -45,7 +59,7 @@ export const RegisterForm = () => {
             autoFocus
           />
         </lable>
-        <lable>
+        <lable className={styles.label}>
           <TextField
             id="register-email-input"
             label="Email"
@@ -55,7 +69,7 @@ export const RegisterForm = () => {
             autoFocus
           />
         </lable>
-        <lable>
+        <lable className={styles.label}>
           <TextField
             id="register-password-input"
             label="Password"
